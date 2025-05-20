@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s)
 	size_t	i;
 	char	*copia;
 
-	if (!s)
-		return (NULL);
 	len = 0;
 	while (s[len] != '\0')
 		len++;

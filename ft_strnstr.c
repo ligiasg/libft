@@ -22,11 +22,11 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	while (s1[i] && i < len)
 	{
 		j = 0;
-		while ((s1[i + j] == s2[j]) && (i + j < len))
+		while (s2[j] && s1[i + j] && s1[i + j] == s2[j] && (i + j) < len)
 		{
-			if (!s2[j + 1])
-				return ((char *)&s1[i]);
 			j++;
+			if (s2[j] == '\0')
+				return ((char *)&s1[i]);
 		}
 		i++;
 	}
